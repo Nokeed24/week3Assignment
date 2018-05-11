@@ -267,5 +267,6 @@ export const showGuess = (word, guesses) => {
   ];
   
   export const randomWord = () => {
+      console.log("randomWord was called")
     return wordList[Math.floor(Math.random() * wordList.length)]
   }
