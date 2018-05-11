@@ -1,17 +1,17 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { randomWord } from '../lib/game'
+import { newGame } from '../actions/game'
 import './NewGameButton.css'
 
 export class NewGameButton extends PureComponent {
   static propTypes = {
-    NewGame: PropTypes.func.isRequired,
+    newGame: PropTypes.func.isRequired,
     label: PropTypes.string
   }
 
   handleClick = () => {
-    this.props.randomWord()
+    this.props.newGame()
   }
 
   render() {
@@ -26,4 +26,4 @@ export class NewGameButton extends PureComponent {
   }
 }
 
-export default connect(null, { randomWord })(NewGameButton)
+export default connect(null, { newGame })(NewGameButton)
