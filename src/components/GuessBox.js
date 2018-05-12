@@ -2,12 +2,16 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { makeGuess } from '../actions/game'
+import { gameFinished, isWinner } from '../lib/game'
 import './GuessBox.css'
 
 export class GuessBox extends PureComponent {
   static propTypes = {
+    word: PropTypes.string.isRequired,    
+    letters: PropTypes.arrayOf(PropTypes.string).isRequired,
     makeGuess: PropTypes.func.isRequired,
-    letters: PropTypes.arrayOf(PropTypes.string).isRequired
+    finished: PropTypes.func.isRequired,
+    winner: PropTypes.func.isRequired
   }
 
   handleSubmit = (event) => {
@@ -20,9 +24,7 @@ export class GuessBox extends PureComponent {
     {
       return false;
     }
-    //let letter = letters
-    //letters.push(event.target.value)
-    //this.props.makeGuess(letters)
+
   }
 
   handleChange = (event) => {
@@ -44,17 +46,40 @@ export class GuessBox extends PureComponent {
   }
 
   render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
+    const { word, finished, winner } = this.props
+    if(finished)
+    { 
+      if(winner && word.length > 0)
+      {
+        return(<h2>YOU WON! Click on New Game to play again!</h2>)
+      }
+      else if(word.length > 0)
+      {
+        return (<h2>YOU LOST! Click on New Game to play again!</h2>);
+      }
+      else
+      {
+        return (<h2>Click on New Game to play!</h2>);
+      }
+
+    }
+    else
+    {
+      return (
+        <form onSubmit={this.handleSubmit}>
           <label className="GuessBox">Next Guess: <input type="text" size="1" onChange={this.handleChange}/></label>
-      </form>
+        </form>
         
-    );
+      );
+    }
   }
 }
 
-const mapStateToProps = ({ letters }) => ({
-  letters
+const mapStateToProps = ({ word, letters }) => ({
+  word,
+  letters,
+  finished: gameFinished(word,letters),
+  winner: isWinner(word,letters)
 });
 
 //export default connect(mapStateToProps, mapDispatchToProps)(ItemList);
