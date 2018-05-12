@@ -12,9 +12,11 @@ body {
 }
 
 body #root{
+  justify-content: center;
   color: white;
   background-color: black;
-  width: 1000px;
+  width: 100vw;
+  height: 100vh;
 }
 
 h1

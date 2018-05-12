@@ -10,8 +10,8 @@ export class GuessBox extends PureComponent {
     word: PropTypes.string.isRequired,    
     letters: PropTypes.arrayOf(PropTypes.string).isRequired,
     makeGuess: PropTypes.func.isRequired,
-    finished: PropTypes.func.isRequired,
-    winner: PropTypes.func.isRequired
+    finished: PropTypes.bool.isRequired,
+    winner: PropTypes.bool.isRequired
   }
 
   handleSubmit = (event) => {

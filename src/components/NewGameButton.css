@@ -1,11 +1,11 @@
 .NewGameButton 
 {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 2%;
+    margin-bottom: 2%;
     height: 50px;
     width: 100px;
     color: white;
     background-color: black;
-    border: 5px greenyellow dashed;
+    border: 5px greenyellow solid;
     border-radius: 25%;
 }
