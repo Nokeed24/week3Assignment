@@ -3,3 +3,18 @@ div
     align-items: center;
     justify-content: center;
 }
+
+.wrongAttempts
+{
+
+}
+
+.yellowWrongAttempts
+{
+    color: orange;
+}
+
+.redWrongAttempts
+{
+    color: red;
+}

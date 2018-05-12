@@ -58,17 +58,19 @@ export class GuessBox extends PureComponent {
       }
       else
       {
-        return (<h2>Click on New Game to play!</h2>);
+        return (<span></span>);
       }
 
     }
     else
     {
       return (
-        <form onSubmit={this.handleSubmit}>
-          <label className="GuessBox">Next Guess: <input type="text" size="1" onChange={this.handleChange}/></label>
-        </form>
-        
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <label className="GuessBox">Next Guess: <input type="text" size="1" onChange={this.handleChange}/></label>
+          </form>
+          <p>Click on the input box and type in a letter...<br />You <u>don't</u> have to press enter</p>
+        </div>        
       );
     }
   }

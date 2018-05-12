@@ -21,11 +21,31 @@ export class Guesses extends PureComponent {
     }
     else
     {
-      return (
-        <div className="Guesses">
-        <span>Wrong Atempts: {wrongAttempts}</span>      
-        </div>
-      )
+      if(wrongAttempts < 3)
+      {
+        return (
+          <div className="Guesses">
+          <span className="wrongAttempts">Wrong Attempts: {wrongAttempts}</span>      
+          </div>
+        )
+      }
+      else if (wrongAttempts < 5)
+      {
+        return (
+          <div className="Guesses">
+          <span className="yellowWrongAttempts">Wrong Attempts: {wrongAttempts}</span>      
+          </div>
+        )
+      }
+      else
+      {
+        return (
+          <div className="Guesses">
+          <span className="redWrongAttempts">Wrong Attempts: {wrongAttempts}</span>      
+          </div>
+        )
+      }
+      
     } 
   }
 }

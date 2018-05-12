@@ -16,6 +16,9 @@ class App extends Component {
           <GuessBox />
           <NewGameButton/>
         </div>
+        <footer>
+          <p>Week 3 assignment for Codaisseur Academy Using React and Redux - Nikolaos Ouvenis</p>
+    </footer>
       </div>
     );
   }
