@@ -13,7 +13,7 @@ export class Guesses extends PureComponent {
 
   render() {
     const {word, letters, count } = this.props
-    var wrongAttempts = count
+    const wrongAttempts = count
     return (
       <div className="Guesses">
         <span>Wrong Atempts: {wrongAttempts}</span>      
