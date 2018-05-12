@@ -7,32 +7,48 @@ import './NewGameButton.css'
 export class NewGameButton extends PureComponent {
   static propTypes = {
     makeGuess: PropTypes.func.isRequired,
+    letters: PropTypes.arrayOf(PropTypes.string).isRequired
   }
 
   handleSubmit = (event) => {
-    // if(event.which === 13){
-    //     return false;
-    // }
-    let letter = []
-    letter.push(event.target.value)
-    this.props.makeGuess(letter)
+    const { letters } = this.props
+    const letter = event.target.value
+    if(event.which === 13){
+         return false;
+    }
+    if(letter === "" || letter.length > 1)
+    {
+      return false;
+    }
+    //let letter = letters
+    //letters.push(event.target.value)
+    //this.props.makeGuess(letters)
   }
 
-//   handleChange = (event) => {
-//     if(event.which === 13){
-//         return false;
-//     }
-//     let letter = []
-//     letter.push(event.target.value)
-//     this.props.makeGuess(letter)
-//   }
+  handleChange = (event) => {
+    const { letters } = this.props
+    const letter = event.target.value
+    if(event.which === 13){
+        return false;
+    }
+    if(letter === "")
+    {
+      return false;
+    }
+    else
+    {
+      letters.push(event.target.value)
+      this.props.makeGuess(letters)
+      event.target.value = ""
+    }
+  }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
           <label>
               Next Guess:
-              <input type="text" />
+              <input type="text" onChange={this.handleChange}/>
           </label>
         </form>
         
@@ -40,6 +56,9 @@ export class NewGameButton extends PureComponent {
   }
 }
 
+const mapStateToProps = ({ letters }) => ({
+  letters
+});
 
-
-export default connect(null, { makeGuess })(NewGameButton)
+//export default connect(mapStateToProps, mapDispatchToProps)(ItemList);
+export default connect(mapStateToProps, { makeGuess })(NewGameButton)

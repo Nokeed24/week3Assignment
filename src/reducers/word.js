@@ -1,4 +1,4 @@
-import { NEW_GAME } from '../actions/types'
+import { NEW_GAME, MAKE_GUESS } from '../actions/types'
 
 export default (state = "", { type, payload } = {}) => {
     switch(type) {
