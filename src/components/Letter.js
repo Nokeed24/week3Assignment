@@ -3,10 +3,9 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import './Word.css'
 
-export class Word extends PureComponent {
+export class Letter extends PureComponent {
   static propTypes = {
-    word: PropTypes.string.isRequired,    
-    letters: PropTypes.arrayOf(PropTypes.string).isRequired
+    word: PropTypes.string.isRequired    
   }
 
   
@@ -19,16 +18,15 @@ export class Word extends PureComponent {
     return (
       <div className="Word">
         <ul>
-          The word is: {wordArray}
+          {wordArray.map((letter, index) => {<span key={index} letter />})}
         </ul>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ word, letters }) => ({
-  word,
-  letters
+const mapStateToProps = ({ word }) => ({
+  word
 })
 
-export default connect(mapStateToProps)(Word)
+export default connect(mapStateToProps)(Letter)
