@@ -9,9 +9,6 @@ export class Word extends PureComponent {
     letters: PropTypes.arrayOf(PropTypes.string).isRequired
   }
 
-  
-  
-
   render() {
     const wordDisplayed = this.props.word
     var wordArray = wordDisplayed.split('')

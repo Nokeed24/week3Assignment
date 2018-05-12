@@ -12,15 +12,12 @@ export class Guesses extends PureComponent {
   }
 
   render() {
-    const show = this.props.show
-    const wordDisplayed = this.props.word
-    const guesses = this.props.letters
+    const {show, wordDisplayed, guesses } = this.props
     var wordArray = show
-    console.log(wordArray)
     return (
        <div className="Word">
         <ul>
-          The word is: {wordArray}
+          {wordArray}
         </ul>      
        </div>
     )
