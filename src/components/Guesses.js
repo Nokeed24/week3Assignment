@@ -13,9 +13,8 @@ export class Guesses extends PureComponent {
   }
 
   render() {
-    const {word, letters, count, finished } = this.props
+    const { count, finished } = this.props
     const wrongAttempts = count
-    console.log(finished)
     if(finished)
     {
       return(<span></span>)

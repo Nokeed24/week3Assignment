@@ -15,7 +15,6 @@ export class GuessBox extends PureComponent {
   }
 
   handleSubmit = (event) => {
-    const { letters } = this.props
     const letter = event.target.value
     if(event.which === 13){
          return false;

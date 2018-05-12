@@ -12,7 +12,7 @@ export class Word extends PureComponent {
   }
 
   render() {
-    const {show, wordDisplayed, guesses } = this.props
+    const { show } = this.props
     var wordArray = show
     return (
        <div className="Word">
