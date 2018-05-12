@@ -10,7 +10,10 @@ export class NewGameButton extends PureComponent {
     label: PropTypes.string
   }
 
-  handleClick = () => {
+  handleClick = (e) => {
+    if(e.keyCode === 13){
+      return false;
+    }
     this.props.newGame()
   }
 

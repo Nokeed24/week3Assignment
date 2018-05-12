@@ -1,6 +1,6 @@
 // src/actions/game.js
 
-import { NEW_GAME, GUESS } from './types'
+import { NEW_GAME, MAKE_GUESS } from './types'
 import { randomWord } from '../lib/game'
 
 export const newGame = () => {
@@ -16,13 +16,11 @@ export const newGame = () => {
     }
 }
 
-// export const makeGuess = () => {
-//     const [board, locked] = fillBoard(rows)
-//     return {
-//       type: MAKE_GUESS,
-//       payload: {
-//         board,
-//         locked
-//       }
-//     }
-//   }
+export const makeGuess = (letters) => {
+    return {
+      type: MAKE_GUESS,
+      payload: {
+          letters
+      }
+    }
+  }

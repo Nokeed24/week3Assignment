@@ -1,4 +1,4 @@
 // src/actions/types.js
 
 export const NEW_GAME = 'NEW_GAME'
-export const GUESS = 'GUESS'
+export const MAKE_GUESS = 'MAKE_GUESS'
