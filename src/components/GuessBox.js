@@ -46,10 +46,7 @@ export class GuessBox extends PureComponent {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-          <label>
-              Next Guess:
-              <input type="text" onChange={this.handleChange}/>
-          </label>
+          <label>Next Guess: <input type="text" size="1" onChange={this.handleChange}/></label>
         </form>
         
     );

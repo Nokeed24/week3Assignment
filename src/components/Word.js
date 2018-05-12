@@ -16,9 +16,7 @@ export class Word extends PureComponent {
     var wordArray = show
     return (
        <div className="Word">
-        <ul>
-          {wordArray}
-        </ul>      
+        <span>{wordArray}</span>      
        </div>
     )
   }

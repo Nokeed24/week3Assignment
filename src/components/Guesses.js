@@ -15,11 +15,9 @@ export class Guesses extends PureComponent {
     const {word, letters, count } = this.props
     var wrongAttempts = count
     return (
-       <div className="Guesses">
-        <ul>
-          Wrong Atempts: {wrongAttempts}
-        </ul>      
-       </div>
+      <div className="Guesses">
+        <span>Wrong Atempts: {wrongAttempts}</span>      
+      </div>
     )
   }
 }
