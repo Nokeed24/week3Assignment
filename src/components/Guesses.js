@@ -1,23 +1,23 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import './Word.css'
-import { showGuess } from '../lib/game'
+import './Guesses.css'
+import { wrongGuessCount } from '../lib/game'
 
 export class Guesses extends PureComponent {
   static propTypes = {
     word: PropTypes.string.isRequired,    
     letters: PropTypes.arrayOf(PropTypes.string).isRequired,
-    show: PropTypes.string.isRequired
+    count: PropTypes.number.isRequired
   }
 
   render() {
-    const {show, wordDisplayed, guesses } = this.props
-    var wordArray = show
+    const {word, letters, count } = this.props
+    var wrongAttempts = count
     return (
-       <div className="Word">
+       <div className="Guesses">
         <ul>
-          {wordArray}
+          Wrong Atempts: {wrongAttempts}
         </ul>      
        </div>
     )
@@ -27,7 +27,7 @@ export class Guesses extends PureComponent {
 const mapStateToProps = ({ word, letters }) => ({
   word,
   letters,
-  show: showGuess(word,letters)
+  count: wrongGuessCount(word,letters)
 })
 
 export default connect(mapStateToProps)(Guesses)

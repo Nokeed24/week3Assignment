@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { makeGuess } from '../actions/game'
-import './NewGameButton.css'
+import './GuessBox.css'
 
-export class NewGameButton extends PureComponent {
+export class GuessBox extends PureComponent {
   static propTypes = {
     makeGuess: PropTypes.func.isRequired,
     letters: PropTypes.arrayOf(PropTypes.string).isRequired
@@ -61,4 +61,4 @@ const mapStateToProps = ({ letters }) => ({
 });
 
 //export default connect(mapStateToProps, mapDispatchToProps)(ItemList);
-export default connect(mapStateToProps, { makeGuess })(NewGameButton)
+export default connect(mapStateToProps, { makeGuess })(GuessBox)
