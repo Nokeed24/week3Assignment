@@ -28,7 +28,7 @@ export class GuessBox extends PureComponent {
 
   handleChange = (event) => {
     const { letters } = this.props
-    const letter = event.target.value
+    const letter = (event.target.value).toLowerCase()
     if(event.which === 13){
         return false;
     }
@@ -38,7 +38,7 @@ export class GuessBox extends PureComponent {
     }
     else
     {
-      letters.push(event.target.value)
+      letters.push(letter)
       this.props.makeGuess(letters)
       event.target.value = ""
     }
