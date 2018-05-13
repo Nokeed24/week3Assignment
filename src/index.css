@@ -31,7 +31,8 @@ div
 h1
 {
   font-family: 'Permanent Marker', cursive;
-  font-size: 70px;
+  font-size: 350%; 
+  line-height: 100%; 
   margin-top: 2%;
   padding: 0px;
   text-align: center;
@@ -39,7 +40,7 @@ h1
 
 footer {
   justify-content: center;
-  font-size: 10px;
+  font-size: 50%;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -59,3 +60,18 @@ footer p
 {
   margin: 2% 0%;
 }
+ 
+@media only screen and (max-width: 480px) { 
+ 
+  h1  
+  {  
+    font-size: 250%;    
+  } 
+ 
+  div 
+  { 
+    font-size: 1em; 
+  } 
+ 
+}
+
